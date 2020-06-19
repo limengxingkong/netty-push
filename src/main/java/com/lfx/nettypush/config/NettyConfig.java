@@ -1,4 +1,4 @@
-package com.sixj.nettypush.config;
+package com.lfx.nettypush.config;
 
 import io.netty.channel.Channel;
 import io.netty.channel.group.ChannelGroup;
@@ -8,7 +8,7 @@ import io.netty.util.concurrent.GlobalEventExecutor;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author sixiaojie
+ * @author lifenxing
  * @date 2020-03-28-15:07
  */
 public class NettyConfig {

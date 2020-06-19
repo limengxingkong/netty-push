@@ -1,4 +1,4 @@
-package com.sixj.nettypush.websocket;
+package com.lfx.nettypush.websocket;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -23,7 +23,7 @@ import javax.annotation.PreDestroy;
 import java.net.InetSocketAddress;
 
 /**
- * @author sixiaojie
+ * @author lifenxing
  * @date 2020-03-28-13:44
  */
 

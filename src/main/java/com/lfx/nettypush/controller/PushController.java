@@ -1,14 +1,12 @@
-package com.sixj.nettypush.controller;
+package com.lfx.nettypush.controller;
 
-import com.sixj.nettypush.service.PushService;
+import com.lfx.nettypush.service.PushService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
- * @author sixiaojie
+ * @author lifenxing
  * @date 2020-03-30-20:08
  */
 @RestController
@@ -35,5 +33,13 @@ public class PushController {
     public void pushMsgToOne(@RequestParam("userId") String userId,@RequestParam("msg") String msg){
         pushService.pushMsgToOne(userId,msg);
     }
+
+
+    @GetMapping("index")
+    public ModelAndView getIndex(){
+        return new ModelAndView("hello");
+    }
+
+
 
 }

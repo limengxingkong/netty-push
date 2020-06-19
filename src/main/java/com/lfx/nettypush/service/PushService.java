@@ -1,9 +1,9 @@
-package com.sixj.nettypush.service;
+package com.lfx.nettypush.service;
 
 
 
 /**
- * @author sixiaojie
+ * @author lifenxing
  * @date 2020-03-30-17:06
  */
 public interface PushService {

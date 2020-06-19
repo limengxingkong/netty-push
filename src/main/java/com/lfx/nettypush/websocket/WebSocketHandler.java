@@ -1,8 +1,8 @@
-package com.sixj.nettypush.websocket;
+package com.lfx.nettypush.websocket;
 
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import com.sixj.nettypush.config.NettyConfig;
+import com.lfx.nettypush.config.NettyConfig;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * TextWebSocketFrame类型， 表示一个文本帧
- * @author sixiaojie
+ * @author lifenxing
  * @date 2020-03-28-13:47
  */
 @Component

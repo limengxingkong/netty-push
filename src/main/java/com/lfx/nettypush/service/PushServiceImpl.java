@@ -1,6 +1,6 @@
-package com.sixj.nettypush.service;
+package com.lfx.nettypush.service;
 
-import com.sixj.nettypush.config.NettyConfig;
+import com.lfx.nettypush.config.NettyConfig;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import org.springframework.stereotype.Service;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author sixiaojie
+ * @author lifenxing
  * @date 2020-03-30-20:10
  */
 @Service
