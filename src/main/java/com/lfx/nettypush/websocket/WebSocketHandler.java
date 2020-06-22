@@ -1,8 +1,10 @@
 package com.lfx.nettypush.websocket;
 
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.lfx.nettypush.config.NettyConfig;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -45,14 +47,24 @@ public class WebSocketHandler extends SimpleChannelInboundHandler<TextWebSocketF
         // 获取用户ID,关联channel
         JSONObject jsonObject = JSONUtil.parseObj(msg.text());
         String uid = jsonObject.getStr("uid");
-        NettyConfig.getUserChannelMap().put(uid,ctx.channel());
-
-        // 将用户ID作为自定义属性加入到channel中，方便随时channel中获取用户ID
-        AttributeKey<String> key = AttributeKey.valueOf("userId");
-        ctx.channel().attr(key).setIfAbsent(uid);
-
-        // 回复消息
-        ctx.channel().writeAndFlush(new TextWebSocketFrame("服务器连接成功！"));
+        String yid = jsonObject.getStr("yid");
+        String news = jsonObject.getStr("msg");
+        if (StrUtil.isBlank(yid)){
+            Channel channel = NettyConfig.getUserChannelMap().get(uid);
+            if (channel==null){
+                NettyConfig.getUserChannelMap().put(uid,ctx.channel());
+                // 将用户ID作为自定义属性加入到channel中，方便随时channel中获取用户ID
+                AttributeKey<String> key = AttributeKey.valueOf("userId");
+                ctx.channel().attr(key).setIfAbsent(uid);
+                // 回复消息
+                ctx.channel().writeAndFlush(new TextWebSocketFrame("服务器连接成功！"));
+            }
+        }else {
+            //发送消息
+            Channel channel = NettyConfig.getUserChannelMap().get(yid);
+            channel.writeAndFlush(new TextWebSocketFrame((uid.equals("123456")?"李芬星：":"李粤莹：")+news));
+            ctx.channel().writeAndFlush(new TextWebSocketFrame("             "+(uid.equals("123456")?"李芬星：":"李粤莹：")+news));
+        }
     }
 
     @Override

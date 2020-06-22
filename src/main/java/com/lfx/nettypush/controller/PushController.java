@@ -34,10 +34,22 @@ public class PushController {
         pushService.pushMsgToOne(userId,msg);
     }
 
-
+    /**
+     * 用户1
+     * @return
+     */
     @GetMapping("index")
     public ModelAndView getIndex(){
         return new ModelAndView("hello");
+    }
+
+    /**
+     * 用户2
+     * @return
+     */
+    @GetMapping("index1")
+    public ModelAndView getIndex1(){
+        return new ModelAndView("hello1");
     }
 
 

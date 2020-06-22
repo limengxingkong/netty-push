@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<p>小莹莹</p>
+<p>小星星</p>
 <form onsubmit="return false">
     <textarea id="responseText" style="height: 150px; width: 300px;"></textarea>
     <input type="button" value="清空内容" onclick="document.getElementById('responseText').value=''">
@@ -14,7 +14,6 @@
     <textarea autofocus id="responseText1" style="height: 150px; width: 300px;"></textarea>
     <input type="button" id="btnSend"  value="发送" />
 </form>
-
 <script>
     var socket;
     // 判断当前浏览器是否支持webSocket
@@ -40,8 +39,8 @@
             socket.send(
                     JSON.stringify({
                         // 连接成功将，用户ID传给服务端
-                        uid: "123456",
-                        yid: "456789",
+                        uid: "456789",
+                        yid: "123456",
                         msg: rt.value
                     })
             );
@@ -55,7 +54,7 @@
             socket.send(
                     JSON.stringify({
                         // 连接成功将，用户ID传给服务端
-                        uid: "123456"
+                        uid: "456789"
                     })
             );
         }
