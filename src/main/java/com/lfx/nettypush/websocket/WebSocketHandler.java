@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 /**
  * TextWebSocketFrame类型， 表示一个文本帧
  * @author lifenxing
- * @date 2020-03-28-13:47
+ * @date 2020-06-20-20:08
  */
 @Component
 @ChannelHandler.Sharable

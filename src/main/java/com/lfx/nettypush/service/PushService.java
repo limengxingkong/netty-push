@@ -4,7 +4,7 @@ package com.lfx.nettypush.service;
 
 /**
  * @author lifenxing
- * @date 2020-03-30-17:06
+ * @date 2020-06-20-20:08
  */
 public interface PushService {
     /**
